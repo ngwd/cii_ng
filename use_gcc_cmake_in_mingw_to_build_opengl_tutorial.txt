@@ -18,3 +18,20 @@ $ /c/cmake/bin/cmake.exe -G "MSYS Makefiles" ../   # NOTE, choose -G "MSYS Makef
 
 4. build the opengl tutorials
 $ make
+
+
+
+
+[some notes]
+$ ld --verbose | grep SEARCH_DIR
+
+SEARCH_DIR("=/mingw64/x86_64-w64-mingw32/lib"); SEARCH_DIR("=/mingw64/lib"); SEARCH_DIR("=/usr/local/lib"); SEARCH_DIR("=/lib"); SEARCH_DIR("=/usr/lib");
+/mingw64/x86_64-w64-mingw32/lib/libglu32.a
+/mingw64/x86_64-w64-mingw32/lib/libopengl32.a
+/usr/lib/libglew32.a  
+/usr/lib/libglew32.dll.a
+
+$ gcc -print-search-dirs | \
+> sed '/^lib/b 1;d;:1;s,/[^/.][^/]*/\.\./,/,;t 1;s,:[^=]*=,:;,;s,;,;  ,g' | \
+> tr \; \\012 | \
+> grep -v '^ */'
