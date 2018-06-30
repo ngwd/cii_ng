@@ -1,0 +1,20 @@
+mingw already installed on a win7, include gcc tool chain and sh, 
+now want to build a opengl playground.
+
+1. choose the tutorial as a opengl start point
+go to get the opengl tutorial http://www.opengl-tutorial.org
+unzip it. suppose in c:/ogl
+
+2. install cmake, cmake build an abstract layer above all kinds of IDE and compiler, XCode, Visual studio, GCC, etc.
+   the CMakeLists already prepared in the ogl folder.
+make sure cmake installed on win7, suppose, the cmake.exe is in the c:/cmake/bin/cmake.exe
+
+3. build the cmake files 
+open the mingw console
+$ cd /c/ogl
+$ mkdir build
+$ cd build
+$ /c/cmake/bin/cmake.exe -G "MSYS Makefiles" ../   # NOTE, choose -G "MSYS Makefiles" is the key point here.
+
+4. build the opengl tutorials
+$ make
