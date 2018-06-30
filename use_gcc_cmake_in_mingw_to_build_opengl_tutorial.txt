@@ -19,6 +19,10 @@ $ /c/cmake/bin/cmake.exe -G "MSYS Makefiles" ../   # NOTE, choose -G "MSYS Makef
 4. build the opengl tutorials
 $ make
 
+5. Enjoy your opengl playground.
+every time you edit the cpp files in tutorial folders.
+you need to go to the build folder to run the 'make'
+the executable file is in your tutorial folders.
 
 
 
